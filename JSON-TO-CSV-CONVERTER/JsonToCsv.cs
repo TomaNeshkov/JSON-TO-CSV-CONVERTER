@@ -20,7 +20,7 @@ namespace ProjectJsonToCsvConverter
         {
             if (string.IsNullOrWhiteSpace(userInput.TrimEnd('/')))
             {
-                throw new Exception("User input should not be empty...");
+                throw new Exception("User input should NOT be empty!");
             }
         }
 
@@ -61,7 +61,7 @@ namespace ProjectJsonToCsvConverter
             }
             catch (Exception)
             {
-                throw new Exception("Invalid Json...");
+                throw new Exception("Invalid Json!");
             }
 
             string countriesAsJosn = SerializeJson();
