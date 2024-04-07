@@ -16,12 +16,12 @@ namespace ProjectJsonToCsvConverter
 
         private void btnRequest_Click(object sender, EventArgs e)
         {
-            var userIntput = $"{textBoxUserInput.Text}/";
+            var userInput = $"{textBoxUserInput.Text}/";
 
             try
             {
-                JsonToCsv.CheckUserInput(userIntput);
-                txtBoxJson.Text = JsonToCsv.GetJson(userIntput);
+                JsonToCsv.CheckUserInput(userInput);
+                txtBoxJson.Text = JsonToCsv.GetJson(userInput);
             }
             catch (Exception ex)
             {
