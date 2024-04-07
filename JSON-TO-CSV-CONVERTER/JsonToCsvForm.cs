@@ -21,7 +21,7 @@ namespace ProjectJsonToCsvConverter
             try
             {
                 JsonToCsv.CheckUserInput(userIntput);
-                textBoxJson.Text = JsonToCsv.GetJson(userIntput);
+                txtBoxJson.Text = JsonToCsv.GetJson(userIntput);
             }
             catch (Exception ex)
             {
@@ -41,12 +41,12 @@ namespace ProjectJsonToCsvConverter
         {
             btnConvert.Visible = true;
             btnConvert.Focus();
-            textBoxCsv.Clear();
+            txtBoxCsv.Clear();
         }
 
         private void btnConvert_Click(object sender, EventArgs e)
         {
-            textBoxCsv.Text = JsonToCsv.GetCsv();
+            txtBoxCsv.Text = JsonToCsv.GetCsv();
         }
 
         private void textBoxCsv_TextChanged(object sender, EventArgs e)
@@ -55,6 +55,11 @@ namespace ProjectJsonToCsvConverter
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

@@ -28,38 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBoxJson = new TextBox();
-            textBoxCsv = new TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JsonToCsvForm));
+            txtBoxJson = new TextBox();
+            txtBoxCsv = new TextBox();
             textBoxUserInput = new TextBox();
             labelEndpoints = new Label();
-            label1 = new Label();
+            endPoints = new Label();
             btnRequest = new Button();
             btnConvert = new Button();
-            label2 = new Label();
-            label3 = new Label();
+            JSON = new Label();
+            CSV = new Label();
             SuspendLayout();
             // 
-            // textBoxJson
+            // txtBoxJson
             // 
-            textBoxJson.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBoxJson.Location = new Point(37, 89);
-            textBoxJson.Multiline = true;
-            textBoxJson.Name = "textBoxJson";
-            textBoxJson.ScrollBars = ScrollBars.Vertical;
-            textBoxJson.Size = new Size(400, 464);
-            textBoxJson.TabIndex = 2;
-            textBoxJson.TextChanged += textBoxJson_TextChanged;
+            txtBoxJson.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            txtBoxJson.Location = new Point(37, 89);
+            txtBoxJson.Multiline = true;
+            txtBoxJson.Name = "txtBoxJson";
+            txtBoxJson.ScrollBars = ScrollBars.Vertical;
+            txtBoxJson.Size = new Size(400, 455);
+            txtBoxJson.TabIndex = 2;
+            txtBoxJson.TextChanged += textBoxJson_TextChanged;
             // 
-            // textBoxCsv
+            // txtBoxCsv
             // 
-            textBoxCsv.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxCsv.Location = new Point(681, 89);
-            textBoxCsv.Multiline = true;
-            textBoxCsv.Name = "textBoxCsv";
-            textBoxCsv.ScrollBars = ScrollBars.Vertical;
-            textBoxCsv.Size = new Size(400, 464);
-            textBoxCsv.TabIndex = 5;
-            textBoxCsv.TextChanged += textBoxCsv_TextChanged;
+            txtBoxCsv.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtBoxCsv.Location = new Point(681, 89);
+            txtBoxCsv.Multiline = true;
+            txtBoxCsv.Name = "txtBoxCsv";
+            txtBoxCsv.ScrollBars = ScrollBars.Vertical;
+            txtBoxCsv.Size = new Size(400, 455);
+            txtBoxCsv.TabIndex = 5;
+            txtBoxCsv.TextChanged += textBoxCsv_TextChanged;
             // 
             // textBoxUserInput
             // 
@@ -72,77 +73,84 @@
             // labelEndpoints
             // 
             labelEndpoints.AutoSize = true;
-            labelEndpoints.Location = new Point(306, 26);
+            labelEndpoints.BorderStyle = BorderStyle.FixedSingle;
+            labelEndpoints.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            labelEndpoints.Location = new Point(280, 26);
             labelEndpoints.Name = "labelEndpoints";
-            labelEndpoints.Size = new Size(211, 20);
+            labelEndpoints.Size = new Size(237, 22);
             labelEndpoints.TabIndex = 4;
             labelEndpoints.Text = "https://restcountries.com/v3.1/";
             // 
-            // label1
+            // endPoints
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(460, 253);
-            label1.Name = "label1";
-            label1.Size = new Size(215, 180);
-            label1.TabIndex = 5;
-            label1.Text = "Endpoints:\r\n- name/(name)\r\n  name/Bulgaria\r\n- region/(region)\r\n  (region/Europe)\r\n- subregion/(region)\r\n  (subregion/SouthEast Europe)\r\n- capital/(capital)\r\n  (capital/Sofia)\r\n";
-            label1.Click += label1_Click;
+            endPoints.AutoSize = true;
+            endPoints.BorderStyle = BorderStyle.FixedSingle;
+            endPoints.Location = new Point(450, 362);
+            endPoints.Name = "endPoints";
+            endPoints.Size = new Size(217, 182);
+            endPoints.TabIndex = 5;
+            endPoints.Text = "Endpoints:\r\n- name/(name)\r\n  name/Bulgaria\r\n- region/(region)\r\n  (region/Europe)\r\n- subregion/(region)\r\n  (subregion/SouthEast Europe)\r\n- capital/(capital)\r\n  (capital/Sofia)\r\n";
+            endPoints.Click += label1_Click;
             // 
             // btnRequest
             // 
-            btnRequest.Location = new Point(460, 89);
+            btnRequest.BackColor = SystemColors.ControlLightLight;
+            btnRequest.Location = new Point(473, 89);
             btnRequest.Name = "btnRequest";
-            btnRequest.Size = new Size(172, 51);
+            btnRequest.Size = new Size(172, 144);
             btnRequest.TabIndex = 3;
             btnRequest.Text = "Request API";
-            btnRequest.UseVisualStyleBackColor = true;
+            btnRequest.UseVisualStyleBackColor = false;
             btnRequest.Click += btnRequest_Click;
             // 
             // btnConvert
             // 
-            btnConvert.Location = new Point(460, 174);
+            btnConvert.BackColor = SystemColors.ControlLightLight;
+            btnConvert.Location = new Point(473, 256);
             btnConvert.Name = "btnConvert";
-            btnConvert.Size = new Size(172, 46);
+            btnConvert.Size = new Size(172, 89);
             btnConvert.TabIndex = 4;
             btnConvert.Text = "Convert to CSV";
-            btnConvert.UseVisualStyleBackColor = true;
+            btnConvert.UseVisualStyleBackColor = false;
             btnConvert.Visible = false;
             btnConvert.Click += btnConvert_Click;
             // 
-            // label2
+            // JSON
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(200, 66);
-            label2.Name = "label2";
-            label2.Size = new Size(44, 20);
-            label2.TabIndex = 8;
-            label2.Text = "JSON";
-            label2.Click += label2_Click;
+            JSON.AutoSize = true;
+            JSON.Location = new Point(200, 66);
+            JSON.Name = "JSON";
+            JSON.Size = new Size(44, 20);
+            JSON.TabIndex = 8;
+            JSON.Text = "JSON";
+            JSON.Click += label2_Click;
             // 
-            // label3
+            // CSV
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(866, 66);
-            label3.Name = "label3";
-            label3.Size = new Size(35, 20);
-            label3.TabIndex = 9;
-            label3.Text = "CSV";
+            CSV.AutoSize = true;
+            CSV.Location = new Point(866, 66);
+            CSV.Name = "CSV";
+            CSV.Size = new Size(35, 20);
+            CSV.TabIndex = 9;
+            CSV.Text = "CSV";
+            CSV.Click += label3_Click;
             // 
             // JsonToCsvForm
             // 
             AcceptButton = btnRequest;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1170, 602);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            ClientSize = new Size(1125, 589);
+            Controls.Add(CSV);
+            Controls.Add(JSON);
             Controls.Add(btnConvert);
             Controls.Add(btnRequest);
-            Controls.Add(label1);
+            Controls.Add(endPoints);
             Controls.Add(labelEndpoints);
             Controls.Add(textBoxUserInput);
-            Controls.Add(textBoxCsv);
-            Controls.Add(textBoxJson);
+            Controls.Add(txtBoxCsv);
+            Controls.Add(txtBoxJson);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "JsonToCsvForm";
             Text = "JsonToCsv";
             ResumeLayout(false);
@@ -150,14 +158,14 @@
         }
 
         #endregion
-        private TextBox textBoxJson;
-        private TextBox textBoxCsv;
+        private TextBox txtBoxJson;
+        private TextBox txtBoxCsv;
         private TextBox textBoxUserInput;
         private Label labelEndpoints;
-        private Label label1;
+        private Label endPoints;
         private Button btnRequest;
         private Button btnConvert;
-        private Label label2;
-        private Label label3;
+        private Label JSON;
+        private Label CSV;
     }
 }

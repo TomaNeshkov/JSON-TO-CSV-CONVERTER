@@ -16,9 +16,9 @@ namespace ProjectJsonToCsvConverter
     {
         static List<Country> countries = new List<Country>();
 
-        internal static void CheckUserInput(string userIntput)
+        internal static void CheckUserInput(string userInput)
         {
-            if (string.IsNullOrWhiteSpace(userIntput.TrimEnd('/')))
+            if (string.IsNullOrWhiteSpace(userInput.TrimEnd('/')))
             {
                 throw new Exception("User input should not be empty...");
             }
@@ -38,14 +38,14 @@ namespace ProjectJsonToCsvConverter
             return true;
         }
 
-        internal static string GetJson(string userIntput)
+        internal static string GetJson(string userInput)
         {
-            Task<HttpResponseMessage> response = GetResponse(userIntput);
+            Task<HttpResponseMessage> response = GetResponse(userInput);
 
             HttpStatusCode statusCode = response.Result.StatusCode;
             if (statusCode == HttpStatusCode.NotFound)
             {
-                throw new Exception("No result found");
+                throw new Exception($"No results found for: {userInput}");
             }
 
             if (statusCode != HttpStatusCode.OK)
